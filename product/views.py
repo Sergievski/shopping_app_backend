@@ -57,12 +57,12 @@ def single_product(request, pk):
     
     
 @api_view(['GET', 'POST'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def items(request):
-    user = request.user
-    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -----------------" , user.id)
+    # user = request.user
+    
     if request.method == 'GET': # show all user items 
-        items = CartItem.objects.filter(cart__user=user)  
+        items = CartItem.objects.all()
         serializer = CartItemSerializer (items, many=True)
         return Response(serializer.data)
     
