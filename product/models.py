@@ -1,7 +1,7 @@
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
-
+from datetime import datetime
 
 def upload_path(instance, filename):
     return '/'.join(['images', str(instance.name), filename])
@@ -18,10 +18,9 @@ class Product(models.Model):
                             
 
 class Cart(models.Model):
-    # name = models.CharField(max_length=200, default = "Name")
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-
-
+    
+    
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product") # nested serialiser 

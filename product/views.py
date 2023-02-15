@@ -16,8 +16,7 @@ def products(request):
     if request.method == 'GET': # show all/searched products 
         q = request.GET.get('query') if request.GET.get('query') != None else ''
         products = Product.objects.filter(
-        Q(archived = False) |
-        Q(name__icontains=q) 
+        Q(archived = False) & Q(name__icontains=q) 
         )
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
