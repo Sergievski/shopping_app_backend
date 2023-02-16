@@ -1,1 +1,1 @@
-web: gunicorn shopping.wsgi --log-file -
+web: sh start.sh
