@@ -1,1 +1,1 @@
-Procfile: web: gunicorn shopping_backend_django.wsgi --log-file -
+Procfile: web: gunicorn shopping.wsgi --log-file -
