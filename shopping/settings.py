@@ -181,3 +181,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
 
+# Configure Django App for Heroku.
+import django_on_heroku
+django_on_heroku.settings(locals())
