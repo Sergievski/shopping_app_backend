@@ -1,1 +1,0 @@
-Procfile: web: gunicorn shopping_backend_django.wsgi --log-file -
