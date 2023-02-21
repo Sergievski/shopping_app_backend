@@ -1,32 +1,32 @@
-Django e-Commerce Project Readme
-Introduction
-This is a Django based e-commerce project, which allows users to view, add, edit and delete products. The project also allows users to add products to their shopping cart, view their shopping cart and edit/delete items from their shopping cart.
 
-Requirements
-Python 3.6 or above
-Django 3.2 or above
-Django REST framework
-Project Structure
-The project has the following structure:
+Shopping website
 
-product app: This app contains the main models for the project, including Product, Cart, and CartItem.
-serializers.py: This file contains the serializers for the models defined in the product app.
-views.py: This file contains the views for handling HTTP requests for the models defined in the product app.
-How to Run the Project
+This project is a web-based e-commerce application that allows users to browse products and make purchases online. This repository contains the Django backend code for the application, which includes API endpoints for retrieving products and cart items, as well as updating and deleting cart items. The backend is designed to work with a React-based frontend, which is hosted in a separate repository.
+
+Installation : 
+
 Clone the repository to your local machine.
-Open a terminal and navigate to the project directory.
-Install the required packages by running pip install -r requirements.txt.
-Run the Django development server by running python manage.py runserver.
-The project should now be accessible at http://localhost:8000/.
-Endpoints
-The following endpoints are available in the project:
+bash
+Copy code
+git clone https://github.com/[USERNAME]/shopping.git
+Install the required packages using pip.
+Copy code
+pip install -r requirements.txt
+Migrate the database.
+Copy code
+python manage.py migrate
+Run the development server.
+Copy code
+python manage.py runserver
 
-GET /products: This endpoint returns a list of all products, filtered by a search query if provided.
-POST /products: This endpoint is used to add a new product to the database.
-GET /products/<pk>: This endpoint returns the details of a single product, identified by its primary key (pk).
-PUT /products/<pk>: This endpoint is used to update the details of a single product, identified by its primary key (pk).
-DELETE /products/<pk>: This endpoint is used to delete a single product, identified by its primary key (pk).
-GET /cart: This endpoint returns a list of all items in the cart.
-POST /cart: This endpoint is used to add a new item to the cart.
-PUT /cart/<pk>: This endpoint is used to update the details of a single item in the cart, identified by its primary key (pk).
-DELETE /cart/<pk>: This endpoint is used to delete a single item from the cart, identified by its primary key (pk).
+Usage  - Once you have installed the application, you can use the following API endpoints to interact with the backend:
+
+Products
+GET /api/products/: Get a list of all products.
+GET /api/products/:id: Get details for a single product.
+Cart Items
+GET /api/cart-items/: Get a list of all items in the cart.
+GET /api/cart-items/:id: Get details for a single item in the cart.
+POST /api/cart-items/: Add a new item to the cart.
+PUT /api/cart-items/:id: Update an existing item in the cart.
+DELETE /api/cart-items/:id: Delete an item from the cart.
